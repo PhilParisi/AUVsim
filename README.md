@@ -16,8 +16,19 @@ The body frame does not know where it is in space (xyz) nor it's current rotatio
 
 # Running on Your System
 If this is your first time using git and/or github, please seek assistance through online videos. Once you understand git, go ahead and clone the repository. First, open a terminal. Second, navigate to the folder you want to setup the repository in. Third, clone with:
-
 ```
 git clone https://github.com/PhilParisi/AUVsim.git
 ```
-you can also simply download the files raw, GitHub has an option to download a zip on the main page of the repository.
+you can also simply download the files raw, GitHub has an option to download a .zip file on the main page of the repository.
+
+## Types of Simulations
+There are a handful of different simulations you can run. It ranges from the most basic kinematics to advanced path-planning and terran-aided navigation. Select the proper folder of interest and work from there! Note some simulations require considering computating speed, and it is recommended to only run a few time iterations (go to the main for loop and decrease the number of loops to do).
+
+### Kinematics
+Kinematics is the study of motion of points and bodies without consideration of the forces acting upon them. This model ignores gravity, buoyancy, and other forces but ensure proper kinematic equations. Check out this [guide to kinematics](https://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations). Think of x2 = x1 + velocity * time, or velocity2 = velocity1 + acceleration * time
+
+### Dynamics
+You can think of dynamics as kinematics + forces. It is the study of how moving objects behave and the causes of movement. This is where we add in buoyancy.
+
+### Future Work
+This will be updated as more simulations become available.
