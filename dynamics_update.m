@@ -95,8 +95,6 @@ AUV.dot_pqr=accel(4:6);
 %%update speed
 AUV.uvw = AUV.uvw + AUV.dot_uvw*dt;
 AUV.pqr = AUV.pqr + AUV.dot_pqr*dt;
-%%update time
-AUV.t = AUV.t + dt;
 end
 
 
