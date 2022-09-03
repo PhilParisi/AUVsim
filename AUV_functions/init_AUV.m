@@ -1,36 +1,35 @@
 function [AUV] = init_AUV()
 % Initialize an AUV with initial conditions
 
+ % TIME
+ AUV.t =          0;                     % time
+
  % EARTH FRAME
  AUV.xyz =        [0;0;0];               % position (m)
  AUV.dot_xyz =    [0;0;0];               % velocity (m/s)
  AUV.rpy =        [0;0;0];               % angle (rad)
  AUV.dot_rpy =    [0;0;0];               % angular velocity (rad/s)
- AUV.t =            0;
  
  % BODY FRAME
- AUV.uvw =        [1;0;0];               % linear velocity (m/s)
+ AUV.uvw =        [0;0;0];               % linear velocity (m/s)
  AUV.dot_uvw =    [0;0;0];               % linear accel (m/s2)
  AUV.pqr =        [0;0;0];               % angular velocity (rad/s)
  AUV.dot_pqr =    [0;0;0];               % angular accel (rad/s2)
  
- % LAT/LONG
- AUV.latlong =    [41.575; -71.35];      % lat/long (degrees)
- 
  % UNIVERSAL CONSTANTS
- g = 9.81;   %[m/s2]
+ AUV.grav = 9.81;   %[m/s2]
  
  % MASS AND DIMENSIONS
  AUV.m = 50;   %mass [m]
  AUV.L = 1.5;  %length [m]
  AUV.D = 0.25; %diameter [m] (vehicle is cylinder)
- AUV.Wt = AUV.m*g;  %weight [N]
+ AUV.Wt = AUV.m*AUV.grav;  %weight [N]
  
  % BOUYANCY
  AUV.rho = 1000; %density [kg/m3] seawater
  %volume can be calculated using other params or inputted directly
  AUV.b = 50.1; %kg 'buoyant mass', Buoyant Force = AUV.b*gravity, equiv to rho_h20*Vol_submerged --> wt of h20
- AUV.Bf = AUV.b*g; %buoyant force [N]
+ AUV.Bf = AUV.b*AUV.grav; %buoyant force [N]
  
  % MOMENTS OF INERTIA [units?]
  AUV.Ixx = 1/2*AUV.m*(AUV.D/2)^2;       AUV.Ixy = 0;                                                AUV.Ixz = 0;
