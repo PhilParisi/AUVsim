@@ -35,6 +35,9 @@ Data = AUV;                     % initialize Data
 dt = 0.1;                        % simulation time step
 
 for t = 0:dt:200
+
+    %%%% UPDATE TIME
+    AUV.t = AUV.t + dt;
        
     %%%% DYNAMICS UPATE         (calcs accel, updates velocity)
     AUV = dynamics_update(AUV,dt);
