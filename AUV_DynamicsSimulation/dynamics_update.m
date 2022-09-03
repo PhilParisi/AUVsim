@@ -1,4 +1,4 @@
-function AUV = dynamic_update(AUV, TAU_P,dt,flag)
+function AUV = dynamics_update(AUV, dt, TAU_P, flag)
 
 %%%%AUV dyanmics%%%%%
 
@@ -87,12 +87,13 @@ accel = inv(MRB+MA)*(TAU_P+G+0*CAV*V-DV.*V-CRB*V);
 accel(4,:)=0; %%restrict roll
 
 
-ax_e=0;
-ay_e=0;
-if(flag==1)
-    ax_e = 0.0000000001*randn;
-    ay_e = 0.0000000001*randn;
-end
+ ax_e=0;
+ ay_e=0;
+% if(flag==1)
+%     ax_e = 0.0000000001*randn;
+%     ay_e = 0.0000000001*randn;
+% end
+
 AUV.dot_uvw=accel(1:3)+[ax_e; ay_e; 0];
 AUV.dot_pqr=accel(4:6);
 %%update speed

@@ -37,7 +37,7 @@ dt = 0.1;                        % simulation time step
 for t = 0:dt:200
        
     %%%% DYNAMICS UPATE         (calcs accel, updates velocity)
-    AUV = dynamics_update(AUV,dt);
+    AUV = dynamics_update(AUV,dt, 0, 0);
     
     %%%% KINEMATICS UPDATE V2   (calcs velocity, updates position)
     AUV = kinematics_update(AUV,dt);         
